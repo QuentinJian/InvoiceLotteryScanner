@@ -1,7 +1,22 @@
 <resources>
-    <string name="app_name">ReceiptLottery</string>
+    <string name="app_name">InvoiceNumberChecker</string>
     <string name="take_photo">Take Photo</string>
     <string name="start_capture">Start Capture</string>
     <string name="stop_capture">Stop Capture</string>
     <string name="open_camera_scan">Scan Code</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="title">本期的發票代碼</string>
+    <string name="special_number_title">特別獎</string>
+    <string name="grand_number_title">特獎</string>
+    <string name="prices_title">頭獎</string>
+    <string name="no_data">No Data</string>
+    <string name="not_detected">未偵測到號碼</string>
+    <string name="rule">二獎 同期統一發票收執聯末7位數號碼與頭獎中獎號碼末7位相同者各得獎金4萬元
+        \n三獎 同期統一發票收執聯末6位數號碼與頭獎中獎號碼末6位相同者各得獎金1萬元
+        \n四獎 同期統一發票收執聯末5位數號碼與頭獎中獎號碼末5位相同者各得獎金4千元
+        \n五獎 同期統一發票收執聯末4位數號碼與頭獎中獎號碼末4位相同者各得獎金1千元
+        \n六獎 同期統一發票收執聯末3位數號碼與頭獎中獎號碼末3位相同者各得獎金2百元></string>
+    <string name="rule_title">中獎規則</string>
+    <string name="close_dialog">關閉</string>
+    <string name="show_rule">Show Rule</string>
 </resources>

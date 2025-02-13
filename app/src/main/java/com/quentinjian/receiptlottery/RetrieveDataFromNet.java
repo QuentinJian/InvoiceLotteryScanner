@@ -1,5 +1,7 @@
 package com.quentinjian.receiptlottery;
 
+import android.os.AsyncTask;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,6 +14,8 @@ import java.util.Scanner;
 
 public class RetrieveDataFromNet {
 
+    public static final String InvoiceNumberUrl = "https://invoice.etax.nat.gov.tw/";
+
     public static String[] retrieveCode(String sourceUrl) throws IOException {
         boolean isNumber;
         String[] result = new String[10];
@@ -23,8 +27,9 @@ public class RetrieveDataFromNet {
             String curContent = content.text();
             isNumber = true;
             for (int i=0;i<curContent.length();i++) {
-                if (!((int)curContent.charAt(i) <= (int)'9') &&
-                        !((int)curContent.charAt(i) >= (int)'0')) {
+                if ((int)curContent.charAt(i) <= (int)'9' && (int)curContent.charAt(i) >= (int)'0') {
+                    continue;
+                }else {
                     isNumber = false;
                     break;
                 }

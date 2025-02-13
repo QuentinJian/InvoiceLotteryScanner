@@ -12,18 +12,113 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="116dp"
-        android:text="Button"
+        android:layout_marginTop="120dp"
+        android:onClick="onClickOpenCamera"
+        android:text="@string/open_camera"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/code_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="@+id/button"
+        android:layout_marginTop="104dp"
+        android:text="@string/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="324dp"
+        android:text="@string/special_number_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_special_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/no_data"
+        app:layout_constraintStart_toStartOf="@+id/code_title"
+        app:layout_constraintTop_toBottomOf="@+id/code_title" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/grand_number_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <TextView
+        android:id="@+id/display_grand_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/no_data"
+        app:layout_constraintStart_toStartOf="@+id/display_special_price"
+        app:layout_constraintTop_toBottomOf="@+id/display_special_price" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/prices_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <TextView
+        android:id="@+id/display_prizes1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/no_data"
+        app:layout_constraintStart_toStartOf="@+id/display_grand_number"
+        app:layout_constraintTop_toBottomOf="@+id/display_grand_number" />
+
+    <Button
+        android:id="@+id/display_rule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="@string/show_rule"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onClickShowRule"/>
+
+
+    <TextView
+        android:id="@+id/display_prizes2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="@string/no_data"
+        app:layout_constraintStart_toStartOf="@+id/display_prizes1"
+        app:layout_constraintTop_toBottomOf="@+id/display_prizes1" />
+
+    <TextView
+        android:id="@+id/display_prizes3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/no_data"
+        app:layout_constraintStart_toStartOf="@+id/display_prizes2"
+        app:layout_constraintTop_toBottomOf="@+id/display_prizes2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
