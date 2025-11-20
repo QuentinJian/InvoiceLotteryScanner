@@ -23,6 +23,14 @@ public class RetrieveDataFromNet {
         String tax_gov_website = readStringFromURL(sourceUrl);
         Document taxGov = Jsoup.parse(tax_gov_website);
         Elements contents = taxGov.getElementsByTag("p");
+        Elements session = taxGov.getElementsByClass("etw-on");
+        String currentMonth = session.text();
+
+        int spaceIdx = 0;
+        while (currentMonth.charAt(spaceIdx) != (int)' ') {
+            spaceIdx++;
+        }
+        result[6] = currentMonth.substring(0, spaceIdx);
         for (Element content: contents) {
             String curContent = content.text();
             isNumber = true;

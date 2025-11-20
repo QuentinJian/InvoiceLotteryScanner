@@ -105,6 +105,7 @@ public class CameraActivity extends AppCompatActivity implements TextAnalyzer.Te
         }
         cameraExecutor = Executors.newSingleThreadExecutor();
         outputDirectory = getOutputDirectory();
+
 //        cameraCaptureButton.setOnClickListener(v -> takePhoto());
     }
 

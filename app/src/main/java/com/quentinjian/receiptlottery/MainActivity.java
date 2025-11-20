@@ -19,7 +19,8 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class
+MainActivity extends AppCompatActivity {
     public static String[] prices;
 
     @Override
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         EdgeToEdge.enable(this);
+        TextView codeTitle = findViewById(R.id.code_title);
         TextView displaySpecialPrice = findViewById(R.id.display_special_price);
         TextView displayGrandPrice = findViewById(R.id.display_grand_number);
         TextView displayPrizes1 = findViewById(R.id.display_prizes1);
@@ -35,24 +37,22 @@ public class MainActivity extends AppCompatActivity {
         Thread thread = new Thread(() -> {
             try {
                 prices = RetrieveDataFromNet.retrieveCode(RetrieveDataFromNet.InvoiceNumberUrl);
-                MainActivity.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        displaySpecialPrice.setText(prices[0]);
-                        displayGrandPrice.setText(prices[1]);
-                        SpannableStringBuilder sb1 = new SpannableStringBuilder(prices[2]);
-                        sb1.setSpan(new ForegroundColorSpan(Color.rgb(220, 54, 72)),
-                                5, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                        displayPrizes1.setText(sb1, TextView.BufferType.SPANNABLE);
-                        SpannableStringBuilder sb2 = new SpannableStringBuilder(prices[3]);
-                        sb2.setSpan(new ForegroundColorSpan(Color.rgb(220, 54, 72)),
-                                5, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                        displayPrizes2.setText(sb2, TextView.BufferType.SPANNABLE);
-                        SpannableStringBuilder sb3 = new SpannableStringBuilder(prices[4]);
-                        sb3.setSpan(new ForegroundColorSpan(Color.rgb(220, 54, 72)),
-                                5, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                        displayPrizes3.setText(sb3, TextView.BufferType.SPANNABLE);
-                    }
+                MainActivity.this.runOnUiThread(() -> {
+                    codeTitle.setText(prices[6]);
+                    displaySpecialPrice.setText(prices[0]);
+                    displayGrandPrice.setText(prices[1]);
+                    SpannableStringBuilder sb1 = new SpannableStringBuilder(prices[2]);
+                    sb1.setSpan(new ForegroundColorSpan(Color.rgb(220, 54, 72)),
+                            5, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                    displayPrizes1.setText(sb1, TextView.BufferType.SPANNABLE);
+                    SpannableStringBuilder sb2 = new SpannableStringBuilder(prices[3]);
+                    sb2.setSpan(new ForegroundColorSpan(Color.rgb(220, 54, 72)),
+                            5, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                    displayPrizes2.setText(sb2, TextView.BufferType.SPANNABLE);
+                    SpannableStringBuilder sb3 = new SpannableStringBuilder(prices[4]);
+                    sb3.setSpan(new ForegroundColorSpan(Color.rgb(220, 54, 72)),
+                            5, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                    displayPrizes3.setText(sb3, TextView.BufferType.SPANNABLE);
                 });
             } catch (IOException e) {
                 Toast.makeText(MainActivity.this, "Data retrieve failed !!!",
